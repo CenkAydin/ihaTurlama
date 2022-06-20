@@ -296,4 +296,8 @@ while True:
 
 print("Döngüden çıkıldı.")
 
+print("Now let's land")
+vehicle.mode = VehicleMode("LAND")
 
+# Close vehicle object
+vehicle.close()
