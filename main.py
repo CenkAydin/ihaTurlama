@@ -3,20 +3,11 @@ from dronekit import connect, VehicleMode, LocationGlobal, LocationGlobalRelativ
 from pymavlink import mavutil  # Needed for command message definitions
 import time
 import math
-import argparse
 #IHA' YA BAGLANMA
-#vehicle = connect("/dev/ttyAMA0", baud=921600, wait_ready=True)
+vehicle = connect("/dev/ttyAMA0", baud=921600, wait_ready=True)
 
 
 ####################################FONKSIYONLAR########################################################################
-parser = argparse.ArgumentParser()
-parser.add_argument('--connect', default='127.0.0.1:14550')
-args = parser.parse_args()
-
-# Connect to the Vehicle
-print('Connecting to vehicle on: %s' % args.connect)
-vehicle = connect(args.connect, baud=921600, wait_ready=True)
-
 
 # 921600 is the baudrate that you have set in the mission plannar or qgc
 
@@ -265,7 +256,7 @@ def ilerle_gorevi():
 
 ############################DEGISKENLER#################################################################################
 
-yukseklik = 15
+yukseklik = 10
 deneme_konum1_x = 0
 deneme_konum1_y = 0
 deneme_konum2_x = 0
@@ -275,7 +266,7 @@ deneme_konum2_y = 0
 ################################ANA_KOD#################################################################################
 
 
-arm_and_takeoff(15)
+arm_and_takeoff(10)
 
 ilerle_gorevi()
 
